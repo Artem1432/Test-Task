@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Change Outgoing Name Form">
+
+        <lightning-spinner lwc:if={isSpinner} size="medium"></lightning-spinner>
+
+        <lightning-button label="Save" slot="actions" onclick={save}></lightning-button>
+
+        <div class="slds-p-horizontal_medium slds-grid slds-gutters">
+
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input
+                    label="Current Name" 
+                    value={currentName} 
+                    disabled>
+                </lightning-input>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input 
+                    label="New Name" 
+                    value={newName} 
+                    onchange={handleNewNameChange} 
+                    onblur={handleNewNameBlur}
+                    max-length="80"
+                    required>
+                </lightning-input>
+            </div>
+
+        </div>
+    </lightning-card>
+</template>
